@@ -26,4 +26,5 @@ jobs:
         RECURL: ${{secrets.RECURL}}
         TG_BOT_TOKEN: ${{secrets.TG_BOT_TOKEN}}
         TG_CHATID: ${{secrets.TG_CHATID}}
+        SEND_KEY: ${{secrets.SEND_KEY}}
       run: python jksb_sysu.py
