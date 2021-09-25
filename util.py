@@ -12,8 +12,8 @@ def get_img(driver, rec_url):
     res =  s.get(url)
     files = {'img': ('captcha.jpg', res.content, 'image/jpeg')}
     r =  requests.post(rec_url, files = files)
-    if len(r.text) == 4:
-        capt = r.text
+    if r.text.split('|')[0] is not '-1':
+        capt = r.text.split('|')[1]
         print(f'验证码识别成功：{capt}')
         return capt
     else:
