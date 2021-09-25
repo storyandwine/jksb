@@ -21,10 +21,13 @@ def get_img(driver, rec_url):
         return False
 
 
-def tgbot_send(token, chatid, message):
-    data = {'chat_id': chatid, 'text': message}
+def wx_send(wxsend_key, message):
+    data = {
+        "text": "健康申报结果"+message,
+        "desp": "如遇身体不适、或居住地址发生变化，请及时更新健康申报信息。"
+    }
     try:
-        r = requests.post(f'https://api.telegram.org/bot{token}/sendMessage', data = data)
+        r = requests.post(f'https://sc.ftqq.com/{wxsend_key}.send', data = data)
         if r.status_code == 200:
             print('发送通知成功')
         else:
