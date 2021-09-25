@@ -9,8 +9,7 @@ options.add_argument("--disable-gpu")
 driver = webdriver.Firefox(executable_path=f'{os.getcwd()}/geckodriver', options=options)
 print("初始化selenium driver完成")
 
-token = os.environ['TG_BOT_TOKEN']
-chatid = os.environ['TG_CHATID']
+wxsend_key = os.environ['SEND_KEY']
 
 # 失败后随机 3-5s 后重试，最多 6 次
 @retry(wait_random_min=3000, wait_random_max=5000, stop_max_attempt_number=6)
@@ -67,10 +66,10 @@ def jksb():
 if __name__ == "__main__":
     login()
     try:
-        tgbot_send(token, chatid, jksb())
+        wx_send(wxsend_key, jksb())
         driver.quit()
     except:
         print('健康申报失败')
-        tgbot_send(token, chatid, '健康申报失败')
+        wx_send(wxsend_key, '健康申报失败')
         driver.quit()
 
