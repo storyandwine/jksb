@@ -1,6 +1,6 @@
 import os, time
 from selenium import webdriver
-from util import get_img, tgbot_send
+from util import get_img, wx_send
 from retrying import retry
 
 options = webdriver.FirefoxOptions()
