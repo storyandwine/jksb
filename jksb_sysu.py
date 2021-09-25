@@ -41,11 +41,11 @@ def login():
         raise Exception('登陆失败')
 
 # 失败后随机 3-5s 后重试，最多 6 次
-@retry(wait_random_min=3000, wait_random_max=5000, stop_max_attempt_number=6)
+# @retry(wait_random_min=3000, wait_random_max=5000, stop_max_attempt_number=6)
 def jksb():
     print('访问健康申报页面')
     driver.get("http://jksb.sysu.edu.cn/infoplus/form/XNYQSB/start")
-    time.sleep(4)
+    time.sleep(10)
     try:
         number = driver.find_element_by_xpath('//*[@id="title_description"]').text
         print(number)
@@ -54,11 +54,11 @@ def jksb():
 
     print("点击下一步")
     driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
-    time.sleep(4)
+    time.sleep(10)
 
     print("提交健康申报")
     driver.find_element_by_xpath('//*[@id="form_command_bar"]/li[1]').click()
-    time.sleep(2)
+    time.sleep(10)
     result = driver.find_element_by_xpath('//div[8]/div/div[1]/div[2]').text
     print("完成健康申报")
     return result
