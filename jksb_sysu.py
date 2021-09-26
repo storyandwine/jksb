@@ -11,7 +11,7 @@ print("初始化selenium driver完成")
 
 wxsend_key = os.environ['SEND_KEY']
 
-失败后随机 3-5s 后重试，最多 6 次
+# 失败后随机 3-5s 后重试，最多 6 次
 @retry(wait_random_min=3000, wait_random_max=5000, stop_max_attempt_number=6)
 def login():
     print("访问登录页面")
@@ -40,7 +40,7 @@ def login():
         print(driver.find_element_by_xpath('//*[@id="fm1"]/div[1]/span').text)
         raise Exception('登陆失败')
 
-失败后随机 3-5s 后重试，最多 6 次
+# 失败后随机 3-5s 后重试，最多 6 次
 @retry(wait_random_min=3000, wait_random_max=5000, stop_max_attempt_number=6)
 def jksb():
    print('访问健康申报页面')
