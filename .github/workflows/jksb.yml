@@ -3,7 +3,7 @@ name: jksb
 on:
   workflow_dispatch:
   schedule:
-    - cron: "15 2 * * *"
+    - cron: "30 22 * * *"
   
 jobs:
   build:
