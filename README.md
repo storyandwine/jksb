@@ -11,20 +11,11 @@ python+selenium+firefox。
 ## 项目配置
 
 首先 Fork 此项目**顺便 Star 一下**，之后前往 Settings-Secrets 填写下列信息，注意需要大写。
+| NETID | PASSWORD | SEND_KEY             | RECURL                                             |
+| ----- | -------- | -------------------- | -------------------------------------------------- |
+| NETID | 密码     | sct.ftqq.com/sendkey | [第三方在线识别平台](http://fast.95man.com)api地址 |
 
-|NETID|PASSWORD|SEND_KEY|RECURL|
 
-|NETID|密码|sct.ftqq.com/sendkey|[第三方在线识别平台](http://fast.95man.com)api地址|
-
-### 验证码
-
-采用[第三方在线识别平台](http://fast.95man.com)，每日免费额度100，请自行前往注册账号，获取 Token。
-
-将上述的 api地址 填入 `RECURL` 中。
-
-### 账号密码
-
-将 netid 填入 `NETID` 中，将密码填入 `PASSWORD` 中。
 
 
 
