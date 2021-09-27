@@ -16,7 +16,7 @@ wxsend_key = os.environ['SEND_KEY']
 def login():
     print("访问登录页面")
     driver.get("https://cas.sysu.edu.cn/cas/login")
-    time.sleep(4)
+    time.sleep(10)
 
     print("读取用户名密码")
     netid = os.environ['NETID']
