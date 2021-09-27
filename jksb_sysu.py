@@ -48,7 +48,6 @@ def jksb():
    time.sleep(10)
    try:
        number = driver.find_element_by_xpath('//*[@id="title_description"]').text
-       print(number)
    except:
        raise Exception('打开健康申报失败')
 
@@ -61,7 +60,7 @@ def jksb():
    time.sleep(10)
    result = driver.find_element_by_xpath('//div[8]/div/div[1]/div[2]').text
    print("完成健康申报")
-   return result
+   return str(number)+str(result)
 
 if __name__ == "__main__":
     login()
