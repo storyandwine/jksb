@@ -24,4 +24,6 @@ jobs:
         PASSWORD: ${{secrets.PASSWORD}}
         RECURL: ${{secrets.RECURL}}
         SEND_KEY: ${{secrets.SEND_KEY}}
+        PYTHONIOENCODING: utf-8
+        PYTHONLEGACYWINDOWSSTDIO: utf-8
       run: python jksb_sysu.py
