@@ -3,7 +3,7 @@ name: jksb
 on:
   workflow_dispatch:
   schedule:
-    - cron: "30 23 * * *"
+    - cron: "38 23 * * *"
   
 jobs:
   build:
@@ -27,7 +27,7 @@ jobs:
         PYTHONIOENCODING: utf-8
         PYTHONLEGACYWINDOWSSTDIO: utf-8
       with:
-          CLI_OPTS: ${{ secrets.CLI_OPTS }}
+          CLI_OPTS: -d https://sslvpn.sysu.edu.cn -u ${{secrets.NETID}} -p ${{secrets.PASSWORD}}
           RETRY: 2
           SLEEP_AFTER_LOGIN: 1
           EXPECTED_EXIT_CODE: 66
