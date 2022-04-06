@@ -11,7 +11,7 @@ python+selenium+firefox。
 ## 项目配置
 
 首先 Fork ，之后前往 Settings-Secrets 填写下列信息，注意需要大写。
-| NETID | PASSWORD | SEND_KEY             | RECURL                                             |
+| NETID | PASSWORD | SEND_KEY             | RECURL(可选)                                            |
 | ----- | -------- | -------------------- | -------------------------------------------------- |
 | NETID | 密码     | sct.ftqq.com/sendkey | [第三方在线识别平台](http://fast.95man.com)api地址 |
 
