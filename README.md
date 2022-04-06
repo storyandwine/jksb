@@ -1,6 +1,6 @@
-# jksb_sysu
+# jksb
 
-基于 [@tomatoF](https://github.com/tomatoF) 的 [jksb_sysu](https://github.com/tomatoF/jksb_sysu) 项目，适配了 GitHub Actions，可以实现每天定时运行，并使用微信发送运行结果。
+适配了 GitHub Actions，可以实现每天定时运行，并使用微信发送运行结果。
 
 **经过简单测试，已经可以正常运行**
 
@@ -10,7 +10,7 @@ python+selenium+firefox。
 
 ## 项目配置
 
-首先 Fork 此项目**顺便 Star 一下**，之后前往 Settings-Secrets 填写下列信息，注意需要大写。
+首先 Fork ，之后前往 Settings-Secrets 填写下列信息，注意需要大写。
 | NETID | PASSWORD | SEND_KEY             | RECURL                                             |
 | ----- | -------- | -------------------- | -------------------------------------------------- |
 | NETID | 密码     | sct.ftqq.com/sendkey | [第三方在线识别平台](http://fast.95man.com)api地址 |
