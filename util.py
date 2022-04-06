@@ -12,20 +12,20 @@ def get_img(driver, rec_url):
 
     url = "https://cas.sysu.edu.cn/cas/captcha.jsp"
     res =  s.get(url)
-    files = {'img': ('captcha.jpg', res.content, 'image/jpeg')}
-    r =  requests.post(rec_url, files = files,timeout=5)
-    if r.text.split('|')[0] != '-1':
-        capt = r.text.split('|')[1]
-        print(f'验证码识别成功：{capt}')
-        return capt
-    else:
-        ocr = ddddocr.DdddOcr()
-        with open('1.jpg',"wb") as f:
-            f.write(res.content)
-        with open('1.jpg', 'rb') as f:  
-            img_bytes = f.read()
-        capt = ocr.classification(img_bytes)
-        return capt
+#     files = {'img': ('captcha.jpg', res.content, 'image/jpeg')}
+#     r =  requests.post(rec_url, files = files,timeout=5)
+#     if r.text.split('|')[0] != '-1':
+#         capt = r.text.split('|')[1]
+#         print(f'验证码识别成功：{capt}')
+#         return capt
+#     else:
+    ocr = ddddocr.DdddOcr()
+    with open('1.jpg',"wb") as f:
+        f.write(res.content)
+    with open('1.jpg', 'rb') as f:  
+        img_bytes = f.read()
+    capt = ocr.classification(img_bytes)
+    return capt
 
 
 def wx_send(wxsend_key, message):
