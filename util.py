@@ -13,7 +13,7 @@ def get_img(driver, rec_url):
     url = "https://cas.sysu.edu.cn/cas/captcha.jsp"
     res =  s.get(url)
     files = {'img': ('captcha.jpg', res.content, 'image/jpeg')}
-    r =  requests.post(rec_url, files = files)
+    r =  requests.post(rec_url, files = files,timeout=5)
     if r.text.split('|')[0] != '-1':
         capt = r.text.split('|')[1]
         print(f'验证码识别成功：{capt}')
