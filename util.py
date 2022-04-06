@@ -1,4 +1,6 @@
 import requests
+import ddddocr
+
 
 def get_img(driver, rec_url):
     ''' 调用某位不知名好心人的在线识别验证码后端
@@ -17,8 +19,13 @@ def get_img(driver, rec_url):
         print(f'验证码识别成功：{capt}')
         return capt
     else:
-        print(f'识别失败：{r.text}，重试')
-        return False
+        ocr = ddddocr.DdddOcr()
+        with open('1.jpg',"wb") as f:
+            f.write(res.content)
+        with open('1.jpg', 'rb') as f:  
+            img_bytes = f.read()
+        capt = ocr.classification(img_bytes)
+        return capt
 
 
 def wx_send(wxsend_key, message):
