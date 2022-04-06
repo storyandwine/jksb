@@ -25,6 +25,7 @@ def get_img(driver, rec_url):
     with open('1.jpg', 'rb') as f:  
         img_bytes = f.read()
     capt = ocr.classification(img_bytes)
+    print(f'验证码识别成功：{capt}')
     return capt
 
 
