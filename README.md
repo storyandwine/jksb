@@ -11,6 +11,7 @@ python+selenium+firefox。
 ## 项目配置
 
 首先 Fork ，之后前往 Settings-Secrets 填写下列信息，注意需要大写。
+然后点击Actions，enable一下。
 | NETID | PASSWORD | SEND_KEY             | 
 | ----- | -------- | -------------------- | 
 | NETID | 密码     | sct.ftqq.com/sendkey | 
