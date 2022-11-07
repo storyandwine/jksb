@@ -13,6 +13,13 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install firefox and packages
+      env:
+        NETID: ${{secrets.NETID}}
+        PASSWORD: ${{secrets.PASSWORD}}
+        RECURL: ${{secrets.RECURL}}
+        SEND_KEY: ${{secrets.SEND_KEY}}
+        PYTHONIOENCODING: utf-8
+        PYTHONLEGACYWINDOWSSTDIO: utf-8
       run: |
         sudo apt-get update -y
         sudo apt-get -y install firefox
