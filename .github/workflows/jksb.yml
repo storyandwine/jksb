@@ -18,7 +18,7 @@ jobs:
         sudo apt-get -y install firefox
         pip install -r requirements.txt
     - name: Run Spider in VPN
-      uses: zhangt2333/actions-easyconnect@main
+#       uses: zhangt2333/actions-easyconnect@main
       env:
         NETID: ${{secrets.NETID}}
         PASSWORD: ${{secrets.PASSWORD}}
@@ -27,10 +27,10 @@ jobs:
         PYTHONIOENCODING: utf-8
         PYTHONLEGACYWINDOWSSTDIO: utf-8
       with:
-          CLI_OPTS: -d https://sslvpn.sysu.edu.cn -u ${{secrets.NETID}} -p ${{secrets.PASSWORD}}
-          RETRY: 2
-          SLEEP_AFTER_LOGIN: 1
-          EXPECTED_EXIT_CODE: 66
+#           CLI_OPTS: -d https://sslvpn.sysu.edu.cn -u ${{secrets.NETID}} -p ${{secrets.PASSWORD}}
+#           RETRY: 2
+#           SLEEP_AFTER_LOGIN: 1
+#           EXPECTED_EXIT_CODE: 66
           # 先通链路再运行脚本
           SCRIPT: |
             python jksb_sysu.py
